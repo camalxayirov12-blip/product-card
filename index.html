@@ -6,22 +6,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Каталог Diamaint</title>
-  <link rel="preconnect" href="">
-  <link rel="preconnect" href="" crossorigin>
-  <link href="" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="bg-wrapper">
-    <img src="img/bg-dandelions.png" alt="" class="bg-pattern">
+    <img src="./img/bg-dandelions.png" alt="" class="bg-pattern">
   </div>
   <main class="container">
     <h1 class="main-title">Выбери свой продукт</h1>
-    <button class="btn-toggle">Сменить цвет</button>
-    <div class="product-grid">
+    <div class="controls" style="margin: 20px; text-align: center;">
+    <button class="btn-toggle-first">Покрасить фон первой карточки</button>
+    <button class="btn-toggle-all">Покрасить Фон всех карточек</button>
+    <a href="https://www.google.com" target="_blank" class="btn-google">Открыть Google</a>
+</div>
       <article class="card">
         <div class="card__img">
-          <img src="img/mousse.png" alt="Мусс">
+          <img src="./img/mousse.png" alt="Мусс">
         </div>
         <div class="card__info">
           <span class="card__label">Для нормальной кожи</span>
@@ -41,7 +45,7 @@
       </article>
       <article class="card">
         <div class="card__img">
-          <img src="img/mask.png" alt="Маска">
+          <img src="./img/mask.png" alt="Маска">
         </div>
         <div class="card__info">
           <span class="card__label">Для сухой кожи</span>
@@ -61,7 +65,7 @@
       </article>
       <article class="card">
         <div class="card__img">
-          <img src="img/gel.png" alt="Гель">
+          <img src="./img/gel.png" alt="Гель">
         </div>
         <div class="card__info">
           <span class="card__label">Для всех типов кожи</span>
@@ -81,7 +85,7 @@
       </article>
       <article class="card">
         <div class="card__img">
-          <img src="img/gift-set1.png" alt="Набор 1">
+          <img src="./img/gift-set1.png" alt="Набор 1">
         </div>
         <div class="card__info">
           <span class="card__label">Для нормальной кожи</span>
@@ -90,7 +94,7 @@
           <span class="card__label">Состав:</span>
           <ul class="card__list">
             <li>воски</li>
-            <li>минералы</li>ё
+            <li>минералы</li>
             <li>масла</li>
           </ul>
           <div class="card__footer">
@@ -101,7 +105,7 @@
       </article>
       <article class="card">
         <div class="card__img">
-          <img src="img/gift-set5.png" alt="Набор 5">
+          <img src="./img/gift-set5.png" alt="Набор 5">
         </div>
         <div class="card__info">
           <span class="card__label">Для всех типов кожи</span>
@@ -121,6 +125,7 @@
       </article>
     </div>
   </main>
+  <script src="script.js"></script>
 </body>
 
 </html>
