@@ -138,3 +138,52 @@ body {
   font-size: 14px;
   line-height: 1.4;
 }
+
+.btn-active {
+  background-color: #1a2a6c !important;
+  color: white !important;
+}
+
+main.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px;
+  align-items: start;
+}
+
+/* ЭТОГО КОДА У ТЕБЯ СЕЙЧАС НЕ ХВАТАЕТ: */
+.main-title,
+.controls {
+  grid-column: 1 / -1;
+  /* Растягивает заголовок и кнопки на все 3 колонки */
+  width: 100%;
+  text-align: center;
+}
+
+/* Синий фон по просьбе ментора */
+.bg-changed {
+  background-color: #0000ff !important;
+  color: white !important;
+}
+
+.main-title,
+.controls {
+  grid-column: 1 / -1;
+  /* Растягивает блок на всю ширину сетки */
+  text-align: center;
+  width: 100%;
+}
+
+.controls {
+  margin-bottom: 40px;
+  /* Чтобы кнопки не «прилипали» к карточкам */
+}
+
+/* Красный фон для всех карточек */
+.bg-red {
+  background-color: #ff0000 !important;
+  /* Яркий красный */
+  color: white !important;
+  /* Белый текст, чтобы читалось */
+}
