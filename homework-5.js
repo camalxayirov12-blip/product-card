@@ -22,7 +22,7 @@ checkTravelSpeed(100000);
 const carModel = "BMW M5 F90";
 const carPrice = 8500000;
 
-function tryToBuyCar(myBudget) {
+function buyCar(myBudget) {
     if (myBudget >= carPrice) {
         console.log(`${carModel} приобретён. Спасибо за покупку!`);
     } else {
@@ -30,7 +30,7 @@ function tryToBuyCar(myBudget) {
         console.log(`Вам не хватает ${neededMoney}$, пополните баланс`);
     }
 }
-tryToBuyCar(5000000);
+buyCar(5000000);
 
 // Задание 6: Проверка возраста (мне 15 лет)
 function checkUserAccessByAge(age) {
