@@ -5,18 +5,18 @@ function showWeatherInCity(city, temp) {
 showWeatherInCity("Баку", 17);
 
 // Задание 4: Скорость света
-const speedOfLightKms = 299792; 
+const  SPEED_OF_LIGHT_KMS = 299792; 
 
-function checkTravelSpeed(currentSpeed) {
-    if (currentSpeed > speedOfLightKms) {
+function compareTravelSpeed(currentSpeed) {
+    if (currentSpeed >  SPEED_OF_LIGHT_KMS) {
         console.log("Сверхсветовая скорость");
-    } else if (currentSpeed < speedOfLightKms) {
+    } else if (currentSpeed <  SPEED_OF_LIGHT_KMS) {
         console.log("Субсветовая скорость");
     } else {
         console.log("Скорость света");
     }
 }
-checkTravelSpeed(100000);
+compareTravelSpeed(100000);
 
 // Задание 5: Покупка BMW M5 F90
 const carModel = "BMW M5 F90";
