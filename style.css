@@ -19,6 +19,9 @@ body {
   height: 100%;
   z-index: -1;
   opacity: 0.15;
+  background-image: url("./img/bg-dandelions.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .bg-pattern {
@@ -186,4 +189,29 @@ main.container {
   /* Яркий красный */
   color: white !important;
   /* Белый текст, чтобы читалось */
+}
+
+main.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+    align-items: start;
+}
+
+.main-title {
+    grid-column: 1 / -1;
+    text-align: center;
+    width: 100%;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }

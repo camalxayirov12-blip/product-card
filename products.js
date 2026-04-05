@@ -4,9 +4,13 @@ export const productCards = [
     category: "ДЛЯ НОРМАЛЬНОЙ КОЖИ",
     title: "Увлажняющий мусс",
      description : "Глубоко увлажняют кожу лица,оставляя её мягкой и гладкой.",
-    ingredients: ["активные натуральные комплексы", "витамины C,A,PP,B И E", "солнцезащитные компоненты"],
+    ingredients: [
+      "активные натуральные комплексы",
+       "витамины C,A,PP,B И E",
+        "солнцезащитные компоненты"
+      ],
     price: 2750,
-    img: "./img/mousse.png"
+    imageName: "mousse"
   },
 
   {
@@ -14,9 +18,13 @@ export const productCards = [
     category: "ДЛЯ НОРМАЛЬНОЙ КОЖИ",
     title: "Увлажняющая маска",
      description : "способствует удерживанию влаги в верхних слоях кожи.",
-    ingredients: ["воски", "минералы", "масла"],
+    ingredients:[
+     "воски",
+       "минералы", 
+       "масла"
+      ],
     price: 3500,
-    img: "./img/mask.png"
+    imageName: "mask"
   },
 
   {
@@ -24,9 +32,13 @@ export const productCards = [
     category: "ДЛЯ НОРМАЛЬНОЙ КОЖИ",
     title: "Гель для умывания",
      description : "Интенсивно очищает,не повреждает защитный барьер кожи.",
-    ingredients: ["минералы", "витамины C,A,PP,B И E", "солнцезащитные компоненты"],
+    ingredients: [
+      "минералы",
+       "витамины C,A,PP,B И E",
+        "солнцезащитные компоненты"
+      ],
     price: 1650,
-    img: "./img/gel.png"
+    imageName: "gel"
   },
 
   {
@@ -34,9 +46,13 @@ export const productCards = [
     category: "ДЛЯ НОРМАЛЬНОЙ КОЖИ",
     title: "подарочный набор №1",
      description : "набор состоящий из увлажняющего крема и маски",
-    ingredients: ["воски", "минералы", "масла"],
+    ingredients: [
+      "воски", 
+      "минералы",
+       "масла"
+      ],
     price: 4750,
-    img: "./img/gift-set1.png"
+    imageName: "gift-set1"
   },
 
   {
@@ -44,8 +60,12 @@ export const productCards = [
     category: "ДЛЯ НОРМАЛЬНОЙ КОЖИ",
     title: "подарочный набор №5",
      description : "Весь набор средств Invisible symphony, крем, маска, мусс и гель для умывания.",
-    ingredients: ["воски", "минералы", "масла"],
+    ingredients: [
+      "воски",
+       "минералы", 
+       "масла"
+      ],
     price: 7520,
-    img: "./img/gift-set5.png"
+    imageName: "gift-set5"
   }
 ];
