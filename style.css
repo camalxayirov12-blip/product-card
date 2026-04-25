@@ -215,3 +215,201 @@ main.container {
 .card:hover {
     transform: translateY(-5px);
 }
+
+.register-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #2D3B87;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.register-btn:hover {
+    background: #1a2a6c;
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+}
+
+.modal-showed {
+    display: block;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    width: 400px;
+    max-width: 90%;
+    z-index: 2001;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-content label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.modal-content input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.modal-content button[type="submit"] {
+    background: #2D3B87;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.modal-content button[type="submit"]:hover {
+    background: #1a2a6c;
+}
+
+.footer {
+  margin-top: 60px;
+  padding: 24px;
+  background: #f3f3f3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-nav {
+  display: flex;
+  gap: 12px;
+}
+.footer-nav a {
+  text-decoration: none;
+  color: #2d3b87;
+}
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 260px;
+}
+.subscribe-form input,
+.subscribe-form button {
+  padding: 10px;
+}
+/* ===== ДЗ 9: кнопка регистрации ===== */
+.register-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  background: #2d3b87;
+  color: #fff;
+  cursor: pointer;
+}
+.register-btn:hover {
+  background: #1a2a6c;
+}
+/* ===== ДЗ 9: модалка ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+}
+.modal-showed {
+  display: block;
+}
+.overlay,
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+}
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2001;
+  width: min(92vw, 640px);
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+}
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.modal-content input {
+  padding: 10px;
+}
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+}
