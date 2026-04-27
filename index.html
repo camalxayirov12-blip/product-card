@@ -6,9 +6,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Каталог Diamaint</title>
-  <link rel="preconnect" href="">
-  <link rel="preconnect" href="" crossorigin>
-  <link href="" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -122,97 +125,45 @@
       </article>
     </div>
   </main>
-  <button class="btn-toggle">Сменить цвет</button>
-  <button id="registerBtn" class="register-btn">Регистрация</button>
-<div id="modal" class="modal">
-  <div class="overlay modal-overlay"></div>
-  <div class="modal-content">
-    <button id="closeModalBtn" class="modal-close" type="button">&times;</button>
-    <h2>Регистрация:</h2>
-    <form id="registerForm" novalidate>
-      <label for="firstName">Имя:</label>
-      <input
-        id="firstName"
-        name="firstName"
-        type="text"
-        placeholder="Введите имя"
-        required
-        minlength="2"
-      />
-      <label for="lastName">Фамилия:</label>
-      <input
-        id="lastName"
-        name="lastName"
-        type="text"
-        placeholder="Введите фамилию"
-        required
-        minlength="2"
-      />
-      <label for="birthDate">Дата рождения:</label>
-      <input
-        id="birthDate"
-        name="birthDate"
-        type="date"
-        required
-      />
-      <label for="login">Логин:</label>
-      <input
-        id="login"
-        name="login"
-        type="text"
-        placeholder="Введите логин"
-        required
-        minlength="4"
-      />
-      <label for="password">Пароль:</label>
-      <input
-        id="password"
-        name="password"
-        type="password"
-        placeholder="Введите пароль"
-        required
-        minlength="6"
-      />
-      <label for="repeatPassword">Пароль повторно:</label>
-      <input
-        id="repeatPassword"
-        name="repeatPassword"
-        type="password"
-        placeholder="Повторите пароль"
-        required
-        minlength="6"
-      />
-      <footer class="footer">
-  <nav class="footer-nav">
-    <a href="#">О нас</a>
-    <a href="#">Каталог</a>
-    <a href="#">Контакты</a>
-  </nav>
-  <form id="subscribeForm" class="subscribe-form">
-    <label for="email">Подпишись на рассылку:</label>
-    <input
-      id="email"
-      name="email"
-      type="email"
-      placeholder="Введите email"
-      required
-    />
-    <button type="submit">Подписаться</button>
-  </form>
-</footer>
-
-      <button type="submit">Зарегистрироваться</button>
+  <footer class="footer">
+    <nav class="footer-nav">
+      <a href="#">О нас</a>
+      <a href="#">Каталог</a>
+      <a href="#">Контакты</a>
+    </nav>
+    <form id="subscribeForm" class="subscribe-form">
+      <label for="email">Подпишись на рассылку:</label>
+      <input id="email" name="email" type="email" placeholder="Введите email" required>
+      <button type="submit">Подписаться</button>
     </form>
-  </div>
-</div>
-<button id="registerBtn" class="register-btn">Регистрация</button>
+  </footer>
+
+  <button id="registerBtn" class="register-btn">Регистрация</button>
   <div id="modal" class="modal">
-    <div class="modal-overlay"></div>
+    <div class="overlay modal-overlay"></div>
     <div class="modal-content">
       <button id="closeModalBtn" class="modal-close" type="button">&times;</button>
       <h2>Регистрация:</h2>
-      <form id="registerForm">
-        ...
+      <form id="registerForm" novalidate>
+        <label for="firstName">Имя:</label>
+        <input id="firstName" name="firstName" type="text" placeholder="Введите имя" required minlength="2">
+
+        <label for="lastName">Фамилия:</label>
+        <input id="lastName" name="lastName" type="text" placeholder="Введите фамилию" required minlength="2">
+
+        <label for="birthDate">Дата рождения:</label>
+        <input id="birthDate" name="birthDate" type="date" required>
+
+        <label for="login">Логин:</label>
+        <input id="login" name="login" type="text" placeholder="Введите логин" required minlength="4">
+
+        <label for="password">Пароль:</label>
+        <input id="password" name="password" type="password" placeholder="Введите пароль" required minlength="6">
+
+        <label for="repeatPassword">Пароль повторно:</label>
+        <input id="repeatPassword" name="repeatPassword" type="password" placeholder="Повторите пароль" required minlength="6">
+
+        <button type="submit">Зарегистрироваться</button>
       </form>
     </div>
   </div>
