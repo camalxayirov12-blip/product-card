@@ -85,4 +85,4 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.classList.remove("modal-showed");
     });
   }
-});
+}); 
