@@ -1,7 +1,43 @@
+import { productCards } from "./products.js";
+
 let user = null;
 
 document.addEventListener("DOMContentLoaded", () => {
+  const productGrid = document.getElementById("productGrid");
+  const productCardTemplate = document.getElementById("productCardTemplate");
   const subscribeForm = document.getElementById("subscribeForm");
+
+  if (productGrid && productCardTemplate) {
+    const cardsFragment = document.createDocumentFragment();
+
+    productCards.forEach((product) => {
+      const cardNode = productCardTemplate.content.cloneNode(true);
+      const image = cardNode.querySelector(".card__img img");
+      const category = cardNode.querySelector(".card__label");
+      const title = cardNode.querySelector(".card__title");
+      const description = cardNode.querySelector(".card__text");
+      const ingredientsList = cardNode.querySelector(".card__list");
+      const price = cardNode.querySelector(".card__price-value");
+
+      image.src = `img/${product.imageName}.png`;
+      image.alt = product.title;
+      category.textContent = product.category;
+      title.textContent = product.title;
+      description.textContent = product.description;
+      price.textContent = `${product.price.toLocaleString("ru-RU")} ₽`;
+
+      product.ingredients.forEach((ingredient) => {
+        const ingredientItem = document.createElement("li");
+        ingredientItem.textContent = ingredient;
+        ingredientsList.appendChild(ingredientItem);
+      });
+
+      cardsFragment.appendChild(cardNode);
+    });
+
+    productGrid.appendChild(cardsFragment);
+  }
+
   if (subscribeForm) {
     subscribeForm.addEventListener("submit", (event) => {
       event.preventDefault();
