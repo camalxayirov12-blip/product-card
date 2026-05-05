@@ -56,12 +56,6 @@ const getCountFromUser = () => {
 
 const renderProducts = (products) => {
     const container = document.querySelector('main.container');
-    
-    if (!container) {
-        console.error("Контейнер main.container не найден!");
-        return;
-    }
-    
     const countToDisplay = getCountFromUser();
     const visibleProducts = products.slice(0, countToDisplay);
     
@@ -71,10 +65,8 @@ const renderProducts = (products) => {
     title.className = 'main-title';
     title.textContent = 'Выбери свой продукт';
     container.appendChild(title);
-    
-    visibleProducts.forEach(product => {
-        container.insertAdjacentHTML('beforeend', createCardTemplate(product));
-    });
+
+    container.insertAdjacentHTML('beforeend', visibleProducts.map(createCardTemplate).join(''));
 };
 
 if (document.readyState === 'loading') {
