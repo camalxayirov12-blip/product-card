@@ -18,9 +18,38 @@
   </div>
   <main class="container">
     <h1 class="main-title">Выбери свой продукт</h1>
-    <button class="btn-toggle">Сменить цвет</button>
+    <button type="button" class="btn-toggle">Сменить цвет</button>
     <div id="productGrid" class="product-grid"></div>
   </main>
+
+  <div id="orderModal" class="modal" aria-hidden="true">
+    <div class="modal__dialog" role="dialog" aria-labelledby="orderModalTitle">
+      <button type="button" class="modal__close" aria-label="Закрыть">&times;</button>
+      <h2 id="orderModalTitle" class="modal__title">Оформление заказа</h2>
+      <form id="orderForm" class="order-form" novalidate>
+        <input type="hidden" name="productTitle" id="orderProductTitle" value="">
+        <label class="order-form__field">
+          <span>Ваше имя</span>
+          <input type="text" name="customerName" required minlength="2" autocomplete="name" placeholder="Иван">
+        </label>
+        <label class="order-form__field">
+          <span>Email</span>
+          <input type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+        </label>
+        <label class="order-form__field">
+          <span>Телефон</span>
+          <input type="tel" name="phone" required minlength="10" autocomplete="tel" placeholder="+7 (999) 000-00-00">
+        </label>
+        <label class="order-form__field">
+          <span>Комментарий</span>
+          <textarea name="comment" rows="3" placeholder="Пожелания по доставке"></textarea>
+        </label>
+        <div class="order-form__actions">
+          <button type="submit" class="btn-submit">Отправить</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <template id="productCardTemplate">
     <article class="card">
@@ -37,6 +66,7 @@
           <span class="card__price-text">Цена</span>
           <span class="card__price-value"></span>
         </div>
+        <button type="button" class="card__order">Заказать</button>
       </div>
     </article>
   </template>
@@ -48,7 +78,7 @@
     </nav>
   </footer>
 
-  <script type="module" src="homework8.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 
 </html>
