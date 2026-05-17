@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(160deg, #e8f5e9 0%, #fff8e1 50%, #e3f2fd 100%);
+  color: #1b5e20;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.header__tag {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #558b2f;
+  margin-bottom: 8px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: #2e7d32;
+}
+
+.header__sub {
+  margin: 8px 0 20px;
+  color: #33691e;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(46, 125, 50, 0.12);
+}
+
+.panel h2 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #388e3c;
+}
+
+.cafe-info {
+  white-space: pre-wrap;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #37474f;
+  font-family: inherit;
+}
+
+.drink-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.drink-card {
+  border: 1px solid #c8e6c9;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+
+.drink-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.drink-card__meta {
+  font-size: 13px;
+  color: #689f38;
+  margin-bottom: 12px;
+}
+
+.drink-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn {
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-info {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.btn-order {
+  background: #43a047;
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #2e7d32;
+  border: 2px solid #81c784;
+}
+
+.btn-outline:hover {
+  background: #e8f5e9;
+}
+
+.hint {
+  margin-top: 14px;
+  font-size: 12px;
+  color: #78909c;
+}
+
+.output {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #37474f;
+}
+
+.output pre {
+  margin-top: 8px;
+  white-space: pre-wrap;
+  background: #f1f8e9;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.back {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.back a {
+  color: #558b2f;
+}

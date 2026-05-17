@@ -1,4 +1,3 @@
-
 export class CatalogItem {
   constructor({ id, category, title, description, ingredients, price, imageName }) {
     this.id = id;
