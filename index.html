@@ -18,9 +18,38 @@
   </div>
   <main class="container">
     <h1 class="main-title">Выбери свой продукт</h1>
-    <button class="btn-toggle">Сменить цвет</button>
+    <button type="button" class="btn-toggle">Сменить цвет</button>
     <div id="productGrid" class="product-grid"></div>
   </main>
+
+  <div id="orderModal" class="modal" aria-hidden="true">
+    <div class="modal__dialog" role="dialog" aria-labelledby="orderModalTitle">
+      <button type="button" class="modal__close" aria-label="Закрыть">&times;</button>
+      <h2 id="orderModalTitle" class="modal__title">Оформление заказа</h2>
+      <form id="orderForm" class="order-form" novalidate>
+        <input type="hidden" name="productTitle" id="orderProductTitle" value="">
+        <label class="order-form__field">
+          <span>Ваше имя</span>
+          <input type="text" name="customerName" required minlength="2" autocomplete="name" placeholder="Иван">
+        </label>
+        <label class="order-form__field">
+          <span>Email</span>
+          <input type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+        </label>
+        <label class="order-form__field">
+          <span>Телефон</span>
+          <input type="tel" name="phone" required minlength="10" autocomplete="tel" placeholder="+7 (999) 000-00-00">
+        </label>
+        <label class="order-form__field">
+          <span>Комментарий</span>
+          <textarea name="comment" rows="3" placeholder="Пожелания по доставке"></textarea>
+        </label>
+        <div class="order-form__actions">
+          <button type="submit" class="btn-submit">Отправить</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <template id="productCardTemplate">
     <article class="card">
@@ -37,6 +66,7 @@
           <span class="card__price-text">Цена</span>
           <span class="card__price-value"></span>
         </div>
+        <button type="button" class="card__order">Заказать</button>
       </div>
     </article>
   </template>
@@ -46,45 +76,9 @@
       <a href="#">Каталог</a>
       <a href="#">Контакты</a>
     </nav>
-    <form id="subscribeForm" class="subscribe-form">
-      <label for="email">Подпишись на рассылку:</label>
-      <input id="email" name="email" type="email" placeholder="Введите email" required>
-      <button type="submit">Подписаться</button>
-    </form>
   </footer>
 
-  <button id="registerBtn" class="register-btn">Регистрация</button>
-  <div id="modal" class="modal">
-    <div class="overlay modal-overlay"></div>
-    <div class="modal-content">
-      <button id="closeModalBtn" class="modal-close" type="button">&times;</button>
-      <h2>Регистрация:</h2>
-      <form id="registerForm" novalidate>
-        <label for="firstName">Имя:</label>
-        <input id="firstName" name="firstName" type="text" placeholder="Введите имя" required minlength="2">
-
-        <label for="lastName">Фамилия:</label>
-        <input id="lastName" name="lastName" type="text" placeholder="Введите фамилию" required minlength="2">
-
-        <label for="birthDate">Дата рождения:</label>
-        <input id="birthDate" name="birthDate" type="date" required>
-
-        <label for="login">Логин:</label>
-        <input id="login" name="login" type="text" placeholder="Введите логин" required minlength="4">
-
-        <label for="password">Пароль:</label>
-        <input id="password" name="password" type="password" placeholder="Введите пароль" required minlength="6">
-
-        <label for="repeatPassword">Пароль повторно:</label>
-        <input id="repeatPassword" name="repeatPassword" type="password" placeholder="Повторите пароль" required
-          minlength="6">
-
-        <button type="submit">Зарегистрироваться</button>
-      </form>
-    </div>
-  </div>
-
-  <script type="module" src="homework-9.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 
 </html>
