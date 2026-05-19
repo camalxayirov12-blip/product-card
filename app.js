@@ -32,7 +32,6 @@ function initCatalog(orderModal) {
   const template = document.getElementById('productCardTemplate');
   if (!grid || !template) return;
 
-  grid.innerHTML = '';
   const fragment = document.createDocumentFragment();
   models.forEach((item) => {
     fragment.appendChild(fillCardFromTemplate(template, item));
@@ -44,24 +43,21 @@ function initCatalog(orderModal) {
   grid.addEventListener('click', (e) => {
     const btn = e.target.closest('.card__order');
     if (!btn) return;
-    const title = btn.dataset.productTitle || '';
-    if (productTitleInput) productTitleInput.value = title;
+    if (productTitleInput) productTitleInput.value = btn.dataset.productTitle || '';
     orderModal.open();
   });
 }
 
 function initOrderForm(orderModal, orderForm) {
-  const formEl = orderForm.form;
   const productTitleInput = document.getElementById('orderProductTitle');
 
-  formEl.addEventListener('submit', (e) => {
+  orderForm.form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (!orderForm.isValid()) {
-      formEl.reportValidity();
+      orderForm.form.reportValidity();
       return;
     }
-    const payload = orderForm.getValues();
-    console.log('Заказ отправлен (демо):', payload);
+    console.log('Заказ:', orderForm.getValues());
     orderForm.reset();
     if (productTitleInput) productTitleInput.value = '';
     orderModal.close();

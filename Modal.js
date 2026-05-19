@@ -27,8 +27,6 @@ export class Modal {
   _bindCloseButton() {
     const closeBtn = this.root.querySelector('.modal__close');
     if (!closeBtn) return;
-    closeBtn.addEventListener('click', () => {
-      this.close();
-    });
+    closeBtn.addEventListener('click', () => this.close());
   }
 }
