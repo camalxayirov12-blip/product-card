@@ -3,7 +3,6 @@ const controls = document.getElementById('controls');
 const container = document.getElementById('container');
 const btnGetAll = document.getElementById('btn-get-all');
 const btnDeleteAll = document.getElementById('btn-delete-all');
-
 const STORAGE_KEY = 'users_db';
 
 // Инициализация приложения
@@ -11,18 +10,14 @@ async function init() {
     const localData = localStorage.getItem(STORAGE_KEY);
 
     if (localData) {
-      
         const users = JSON.parse(localData);
         render(users);
     } else {
-        
         try {
             const users = await fetchUsersWithDelay('db.json', 2000);
-    
             localStorage.setItem(STORAGE_KEY, JSON.stringify(users));
             render(users);
         } catch (error) {
-            
             statusMessage.textContent = 'Ошибка при загрузке данных';
             statusMessage.className = 'error';
             console.error(error);
@@ -30,14 +25,12 @@ async function init() {
     }
 }
 
-// Функция fetch-запроса с симуляцией задержки
-function fetchUsersWithDelay(url, delay) {
+function fetchUsersWithDelay(url, delay = 0) {
     return new Promise((resolve, reject) => {
         setTimeout(async () => {
             try {
                 const response = await fetch(url);
                 if (!response.ok) {
-                    
                     throw new Error(`Ошибка HTTP: ${response.status}`);
                 }
                 const data = await response.json();
@@ -49,9 +42,8 @@ function fetchUsersWithDelay(url, delay) {
     });
 }
 
-// Функция отрисовки карточек на странице
 function render(users) {
-    container.innerHTML = ''; // Очищаем контейнер перед рендером
+    container.innerHTML = ''; 
 
     if (users.length === 0) {
         statusMessage.textContent = 'Список пользователей пуст';
@@ -61,7 +53,6 @@ function render(users) {
         statusMessage.style.display = 'none'; 
     }
 
-    // Показывать кнопки управления только когда данные загружены
     controls.style.display = 'block';
 
     // Создаем карточки
@@ -80,25 +71,25 @@ function render(users) {
 
 window.deleteCard = function(id) {
     const localData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  
     const filteredUsers = localData.filter(user => user.id !== id);
     
     localStorage.setItem(STORAGE_KEY, JSON.stringify(filteredUsers));
     render(filteredUsers);
 };
 
+// Кнопка: Удалить все карточки
 btnDeleteAll.addEventListener('click', () => {
-  
     localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
     render([]);
 });
 
+// Кнопка: Получить все карточки 
 btnGetAll.addEventListener('click', async () => {
     const localData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
     
     try {
-        const response = await fetch('db.json');
-        const originalUsers = await response.json();
+
+        const originalUsers = await fetchUsersWithDelay('db.json', 0);
 
         if (localData.length === originalUsers.length) {
             alert('Информационное сообщение: У вас уже отображены все пользователи!');
@@ -110,7 +101,9 @@ btnGetAll.addEventListener('click', async () => {
 
     } catch (error) {
         alert('Не удалось получить данные с сервера для восстановления списка.');
+        console.error(error);
     }
 });
 
+// Запуск приложения
 init();
