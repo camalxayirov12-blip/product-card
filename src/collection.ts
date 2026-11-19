@@ -1,8 +1,10 @@
 export class Collection<T> {
-  private items: T[];
+  private items: T[] = [];
 
-  constructor(initialItems: T[] = []) {
-    this.items = [...initialItems];
+  constructor(initialData?: T[]) {
+    if (initialData) {
+      this.items = [...initialData];
+    }
   }
 
   getAll(): T[] {
@@ -10,7 +12,10 @@ export class Collection<T> {
   }
 
   get(index: number): T | undefined {
-    return this.items[index];
+    if (index >= 0 && index < this.items.length) {
+      return this.items[index];
+    }
+    return undefined;
   }
 
   clear(): void {
@@ -26,6 +31,8 @@ export class Collection<T> {
   replace(index: number, newItem: T): void {
     if (index >= 0 && index < this.items.length) {
       this.items[index] = newItem;
+    } else {
+      console.error('Индекс за пределами коллекции');
     }
   }
 }
