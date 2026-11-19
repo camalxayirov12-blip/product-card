@@ -7,28 +7,28 @@ export class Collection<T> {
     }
   }
 
-  public getAll(): T[] {
+  getAll(): T[] {
     return this.items;
   }
 
-  public get(index: number): T | undefined {
+  get(index: number): T | undefined {
     if (index >= 0 && index < this.items.length) {
       return this.items[index];
     }
     return undefined;
   }
 
-  public clear(): void {
+  clear(): void {
     this.items = [];
   }
 
-  public remove(index: number): void {
+  remove(index: number): void {
     if (index >= 0 && index < this.items.length) {
       this.items.splice(index, 1);
     }
   }
 
-  public replace(index: number, newItem: T): void {
+  replace(index: number, newItem: T): void {
     if (index >= 0 && index < this.items.length) {
       this.items[index] = newItem;
     } else {

@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
-import { Color } from '../enums/Color'; 
+import { Color } from '../enums/Color';
 
 @Component({
   selector: 'app-root',
-  standalone: true, 
+  standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  public companyName: string = 'TechFusion';
+  companyName: string = 'TechFusion';
 
   constructor() {
     this.saveLastVisitDate();
     this.updateVisitCount();
   }
 
-  public isPrimaryColor(color: Color): boolean {
+  isPrimaryColor(color: Color): boolean {
     return color === Color.Red || color === Color.Green || color === Color.Blue;
   }
 
