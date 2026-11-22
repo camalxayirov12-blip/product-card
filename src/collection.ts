@@ -36,3 +36,20 @@ export class Collection<T> {
     }
   }
 }
+
+interface User {
+  id: number;
+  name: string;
+}
+
+const rolesData: string[] = ['Admin', 'User', 'Guest'];
+const stringCollection: Collection<string> = new Collection<string>(rolesData);
+stringCollection.replace(2, 'Moderator');
+stringCollection.remove(1);
+
+const usersData: User[] = [
+  { id: 1, name: 'Иван' },
+  { id: 2, name: 'Анна' }
+];
+const objectCollection: Collection<User> = new Collection<User>(usersData);
+objectCollection.replace(0, { id: 1, name: 'Иван Иванов' });

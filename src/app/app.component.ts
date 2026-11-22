@@ -20,13 +20,13 @@ export class AppComponent {
   }
 
   private saveLastVisitDate(): void {
-    const currentDate = new Date().toISOString();
+    const currentDate: string = new Date().toISOString();
     localStorage.setItem('lastVisitDate', currentDate);
   }
 
   private updateVisitCount(): void {
-    const countStr = localStorage.getItem('visitCount');
-    let count = countStr ? parseInt(countStr, 10) : 0;
+    const countStr: string | null = localStorage.getItem('visitCount');
+    let count: number = countStr ? parseInt(countStr, 10) : 0;
     count += 1;
     localStorage.setItem('visitCount', count.toString());
   }
